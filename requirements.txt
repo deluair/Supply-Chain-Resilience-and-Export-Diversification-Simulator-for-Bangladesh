@@ -1,0 +1,22 @@
+# Core Libraries
+numpy
+pandas
+networkx
+matplotlib
+scipy
+
+# Simulation
+simpy
+# python-or-tools # Consider adding if core to initial modules
+
+# Visualization
+plotly
+bokeh
+
+# Economic Modeling / Stats
+statsmodels
+
+# Utility
+python-dotenv
+pyyaml
+pydantic

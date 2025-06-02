@@ -1,0 +1,44 @@
+{
+  "simulation_settings": {
+    "simulation_name": "BangladeshSupplyChainSim_v1",
+    "total_steps": 100,
+    "random_seed": 42
+  },
+  "logging": {
+    "log_level": "INFO",
+    "console_log_level": "INFO",
+    "log_file": "logs/simulation_run.log",
+    "max_log_file_bytes": 10485760,
+    "log_backup_count": 5
+  },
+  "network_config": {
+    "data_source_type": "synthetic",
+    "synthetic_params": {
+      "num_factories": 5,
+      "num_ports": 2,
+      "num_warehouses": 10,
+      "num_markets": 20,
+      "num_transport_hubs": 3,
+      "connection_probability": 0.3
+    },
+    "network_data_file": "data/processed/network_definition.json"
+  },
+  "agent_configs": {
+    "num_export_sector_agents": 5,
+    "num_logistics_agents": 3,
+    "num_market_agents": 10,
+    "num_disruption_agents": 2 
+  },
+  "disruption_agent_default_config": {
+    "disruption_type": "PortCongestion",
+    "magnitude": 0.3,
+    "duration": 5,
+    "target_scope": "Port:Chittagong",
+    "start_step": 10,
+    "custom_property_example": "This can be anything specific to a disruption type"
+  },
+  "example_feature_flags": {
+    "enable_detailed_reporting": true,
+    "use_advanced_disruption_model": false
+  }
+}
