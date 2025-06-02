@@ -3,7 +3,7 @@ import networkx as nx
 import logging
 from typing import List, Dict, Optional, Any, Type
 from .nodes import BaseNode, PortNode, FactoryNode, WarehouseNode, MarketNode, TransportHubNode # Ensure all specific node types are imported
-from .edges import Edge, TransportLink # Ensure all specific edge types are imported
+from .edges import Edge, TransportEdge # Ensure all specific edge types are imported
 
 logger = logging.getLogger(__name__)
 
@@ -20,7 +20,7 @@ class SupplyChainNetwork:
         self.edges_dict: Dict[str, Edge] = {} # For quick lookup of Edge objects by ID
         logger.info(f"SupplyChainNetwork '{self.name}' initialized.")
 
-    def add_node_object(self, node_obj: Node):
+    def add_node_object(self, node_obj: BaseNode):
         """Adds a Node object to the network."""
         if node_obj.id in self.nodes_dict:
             logger.warning(f"Node with ID {node_obj.id} ({node_obj.name}) already exists. Skipping addition.")
